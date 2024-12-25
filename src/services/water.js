@@ -107,7 +107,7 @@ export const getMonthWater = async ({ filter = {} }) => {
     throw new Error("User not found");
   }
 
-  const userWaterRate = user.waterRate; // Денна норма користувача
+  const userWaterRate = user.waterRate; 
 
   const data = await getGroupedData(result, userWaterRate);
 

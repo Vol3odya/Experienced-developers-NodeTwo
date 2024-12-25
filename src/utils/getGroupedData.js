@@ -25,8 +25,8 @@ export const getGroupedData = async (data, userWaterRate) => {
 
   const result = Array.from(groupedData.values()).map(entry => {
       const waterRateLiters = (entry.waterRate / 1000).toFixed(1);
-      const waterVolumeLiters = (entry.waterVolume / 1000).toFixed(1); 
-      const percent = (entry.waterVolume / entry.waterRate) * 100;
+      const waterVolumeLiters = (entry.waterVolume / 1000).toFixed(1);
+      const percent = Math.min(100, Math.ceil((entry.waterVolume / entry.waterRate) * 100));
 
       return {
           date: entry.date,
