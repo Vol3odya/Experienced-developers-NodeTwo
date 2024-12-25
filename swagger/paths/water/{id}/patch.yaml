@@ -1,0 +1,53 @@
+tags:
+  - Water
+summary: Edit water consumption record
+operationId: patchWater
+description: Update an existing water consumption record by id
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: id
+    description: Id of the water consumption record to update
+    required: true
+    schema:
+      type: string
+      example: '20b2f76d822221c0b0f394a1'
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - waterVolume
+          - data
+        properties:
+          waterVolume:
+            type: number
+            description: 'waterVolume'
+            example: 500
+          data:
+            type: string
+            description: 'data`s water'
+            example: 2024-10-23 13:10
+responses:
+  '200':
+    description: Water record updated successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Water record updated successfully!
+            data:
+              $ref: '../../../components/schemas/water.yaml'
+  '400':
+    $ref: '../../../components/responses/400.yaml'
+  '404':
+    $ref: '../../../components/responses/404.yaml'

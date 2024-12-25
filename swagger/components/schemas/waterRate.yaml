@@ -1,0 +1,8 @@
+type: object
+properties:
+  waterRate:
+    type: number
+    description: 'The amount of a daily norma water rate in milliliters'
+    minimum: 50
+    maximum: 15000
+    example: 150

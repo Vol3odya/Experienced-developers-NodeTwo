@@ -1,0 +1,28 @@
+[33m777ac01[m[33m ([m[1;36mHEAD -> [m[1;32mwatertest[m[33m)[m HEAD@{0}: checkout: moving from main to watertest
+[33m777ac01[m[33m ([m[1;36mHEAD -> [m[1;32mwatertest[m[33m)[m HEAD@{1}: checkout: moving from water to main
+[33m0441697[m[33m ([m[1;31morigin/today[m[33m)[m HEAD@{2}: checkout: moving from main to water
+[33m0441697[m[33m ([m[1;31morigin/today[m[33m)[m HEAD@{3}: checkout: moving from today to main
+[33m0441697[m[33m ([m[1;31morigin/today[m[33m)[m HEAD@{4}: merge main: Fast-forward
+[33m617894d[m HEAD@{5}: checkout: moving from main to today
+[33m0441697[m[33m ([m[1;31morigin/today[m[33m)[m HEAD@{6}: pull: Fast-forward
+[33m0bac016[m HEAD@{7}: checkout: moving from month to main
+[33me64d6aa[m HEAD@{8}: commit: add month
+[33m617894d[m HEAD@{9}: checkout: moving from main to month
+[33m0bac016[m HEAD@{10}: checkout: moving from month to main
+[33m617894d[m HEAD@{11}: checkout: moving from main to month
+[33m0bac016[m HEAD@{12}: checkout: moving from month to main
+[33m617894d[m HEAD@{13}: checkout: moving from today to month
+[33m617894d[m HEAD@{14}: merge main: Merge made by the 'ort' strategy.
+[33me1173ee[m HEAD@{15}: checkout: moving from main to today
+[33m0bac016[m HEAD@{16}: pull: Fast-forward
+[33m11f8250[m HEAD@{17}: checkout: moving from today to main
+[33me1173ee[m HEAD@{18}: commit: add today
+[33m11f8250[m HEAD@{19}: checkout: moving from main to today
+[33m11f8250[m HEAD@{20}: checkout: moving from water to main
+[33m4885c4e[m[33m ([m[1;31morigin/water[m[33m)[m HEAD@{21}: checkout: moving from main to water
+[33m11f8250[m HEAD@{22}: checkout: moving from water to main
+[33m4885c4e[m[33m ([m[1;31morigin/water[m[33m)[m HEAD@{23}: checkout: moving from main to water
+[33me0522e7[m HEAD@{24}: checkout: moving from water to main
+[33m4885c4e[m[33m ([m[1;31morigin/water[m[33m)[m HEAD@{25}: commit: add water
+[33me0522e7[m HEAD@{26}: checkout: moving from main to water
+[33me0522e7[m HEAD@{27}: clone: from https://github.com/Vol3odya/Experienced-developers-Node.git

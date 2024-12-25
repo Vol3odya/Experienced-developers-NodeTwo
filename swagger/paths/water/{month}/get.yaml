@@ -1,0 +1,63 @@
+tags:
+  - Water
+summary: Get water consumption records by month
+operationId: getWaterMonth
+description: Return water consumption records for a specific month and year
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: month
+    description: "The month and year for which to retrieve water consumption records in 'MM-YYYY' format"
+    required: true
+    schema:
+      type: string
+      example: '12-2024'
+responses:
+  '200':
+    description: Water records found for the specific month
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: HTTP status code indicating the records were successfully found
+              example: 200
+            message:
+              type: string
+              example: "Successfully found month data!"
+            data:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        example: '18, December'
+                      waterRate:
+                        type: string
+                        description: The user's daily water consumption goal in liters
+                        example: '2.0 L'
+                      waterVolume:
+                        type: string
+                        description: The actual volume of water consumed in liters
+                        example: '0.7 L'
+                      count:
+                        type: integer
+                        description: The number of times water consumption was recorded
+                        example: 3
+                      percent:
+                        type: string
+                        description: The percentage of the daily water consumption goal that was achieved
+                        example: '35%'
+                        $ref: ../../../components/schemas/waterMonth.yaml
+
+  '400':
+    $ref: '../../../components/responses/400.yaml'
+  '404':
+    $ref: '../../../components/responses/401.yaml'

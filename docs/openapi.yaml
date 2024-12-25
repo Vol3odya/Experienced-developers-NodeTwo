@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Water traker app
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description: This is a documentation of a water tracker app
+tags:
+  - name: Auth
+    description: Authentication and authorization operations
+  - name: User
+    description: Operations with user's data
+  - name: Water
+    description: Operations with water
+servers:
+  - url: https://tracker-of-water-xk7t.onrender.com
+paths:
+  /users/current:
+    get:
+      $ref: '../swagger/paths/user/get.yaml'
+  /users/update:
+    patch:
+      $ref: '../swagger/paths/user/patch.yaml'
+  /users/avatar:
+    patch:
+      $ref: '../swagger/paths/user/avatar/patch.yaml'
+  /users/waterRate:
+    patch:
+      $ref: '../swagger/paths/user/waterRate/patch.yaml'
+  /auth/signup:
+    post:
+      $ref: '../swagger/paths/auth/register/post.yaml'
+  /auth/signin:
+    post:
+      $ref: '../swagger/paths/auth/login/post.yaml'
+  /auth/logout:
+    post:
+      $ref: '../swagger/paths/auth/logout/post.yaml'
+  /auth/send-reset-email:
+    post:
+      $ref: '../swagger/paths/auth/send-reset-enail/post.yaml'
+  /auth/reset-pwd:
+    post:
+      $ref: '../swagger/paths/auth/reset-pwd/post.yaml'
+  /auth/get-oauth-url:
+    get:
+      $ref: '../swagger/paths/auth/login-with-google/get.yaml'
+  /auth/confirm-oauth:
+    post:
+      $ref: '../swagger/paths/auth/login-with-google/post.yaml'
+  /water:
+    post:
+      $ref: '../swagger/paths/water/post.yaml'
+  /water/{id}:
+    patch:
+      $ref: '../swagger/paths/water/{id}/patch.yaml'
+    delete:
+      $ref: '../swagger/paths/water/{id}/delete.yaml'
+  /water/day/{day}:
+    get:
+      $ref: '../swagger/paths/water/{day}/get.yaml'
+  /water/month/{month}:
+    get:
+      $ref: '../swagger/paths/water/{month}/get.yaml'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,51 @@
+tags:
+  - Auth
+summary: Register a new user
+operationId: registerUser
+security:
+  - bearerAuth: []
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          email:
+            description: "User's email. Must be a valid email"
+            type: string
+            example: johndoe@gmail.com
+          password:
+            description: "User's password. The password must contain between 6 and 30 characters"
+            type: string
+            example: 'Water1234'
+            minLength: 6
+            maxLength: 30
+        required:
+          - email
+          - password
+responses:
+  '201':
+    description: User successfully registered
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 201
+            message:
+              type: string
+              example: Successfully registered a user!
+            data:
+              type: object
+              properties:
+                accessToken:
+                  type: string
+                  description: The access token for the authenticated session
+                  example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+                user:
+                  $ref: '../../../components/schemas/user.yaml'
+  '400':
+    $ref: ../../../components/responses/400.yaml

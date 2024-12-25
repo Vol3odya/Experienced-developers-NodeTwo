@@ -1,0 +1,40 @@
+tags:
+  - Water
+summary: Add water consumption record
+operationId: addWaterDate
+description: 'Add a new water consumption record with entries'
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          waterVolume:
+            type: number
+            description: 'waterVolume'
+            example: 500
+          data:
+            type: string
+            description: 'data`s water'
+            example: 2024-12-18 13:10
+responses:
+  '200':
+    description: Water record created successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 201
+            message:
+              type: string
+              example: Water record created successfully!
+            data:
+              type: object
+              $ref: ../../components/schemas/water.yaml
+  '400':
+    $ref: ../../components/responses/400.yaml

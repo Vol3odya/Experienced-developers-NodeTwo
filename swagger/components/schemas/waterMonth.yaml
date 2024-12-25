@@ -1,0 +1,32 @@
+properties:
+  data:
+    type: array
+    items:
+      type: object
+      required:
+        - date
+        - waterRate
+        - waterVolume
+        - count
+        - percent
+      properties:
+        date:
+          type: string
+          example: '18, December'
+          description: 'Date in the format - day, month (e.g. 18, December)'
+        waterRate:
+          type: integer
+          example: '2.0 L'
+          description: 'Daily water consumption norm in liters'
+        waterVolume:
+          type: integer
+          example: '0.7 L'
+          description: 'Actual water volume consumed'
+        count:
+          type: integer
+          example: 3
+          description: 'Number of water intake entries'
+        percent:
+          type: string
+          example: '20%'
+          description: 'Water consumption percentage relative to the waterRate'

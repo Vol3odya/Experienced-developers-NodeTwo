@@ -1,0 +1,42 @@
+tags:
+  - User
+summary: Update dailyNorm
+operationId: updateWaterRate
+description: 'Update water daily norm for the user'
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/schemas/waterRate.yaml'
+        properties:
+          waterRate:
+            description: "User's daily norma in milliliters"
+            type: number
+            example: 50
+responses:
+  '200':
+    description: HTTP status code of a successful operation
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully updated daily norm of water!
+            data:
+              type: object
+              $ref: '../../../components/schemas/waterRate.yaml'
+  '401':
+    $ref: '../../../components/responses/401.yaml'
+  '404':
+    $ref: '../../../components/responses/404.yaml'

@@ -1,0 +1,31 @@
+type: object
+required:
+  - waterVolume
+  - date
+properties:
+  waterVolume:
+    type: number
+    description: 'The waterVolume of water consumed, in milliliters (must be between 50 and 5000).'
+    minimum: 1
+    maximum: 5000
+    example: 250
+  userId:
+    type: string
+    description: "User's ID"
+    example: '609e126aa08b5b3c88b728db'
+  date:
+    type: string
+    description: "The date and time of water consumption. Must be in 'DD-MM-YYYY HH:mm' format"
+    format: date-time
+    example: '17-12-2024 18:26'
+  _id:
+    type: string
+    example: '67135ea1260aecfe82bea7b7'
+  createdAt:
+    type: string
+    format: date-time
+    example: '2024-12-17T12:00:00.000Z'
+  updatedAt:
+    type: string
+    format: date-time
+    example: '2024-12-17T12:00:00.000Z'
